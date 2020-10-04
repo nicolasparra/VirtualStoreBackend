@@ -1,0 +1,22 @@
+version: "3"
+services:
+    backend:
+        container_name: backend 
+        build: 
+            context: .
+            dockerfile: Dockerfile
+        depends_on:
+          - db  
+        volumes:
+          - .:/app
+          - /app/node_modules
+        ports: ['4000:4000', '4002:4002']
+    db:
+        container_name: db
+        image: mongo
+        restart: always
+        ports: ['27017:27017'] 
+        volumes:  
+        - mongodata:/data/db   
+volumes:
+    mongodata:
