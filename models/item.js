@@ -5,6 +5,7 @@ const mongoosePaginate = require('mongoose-paginate-v2');
 
 const item = Schema({
     precio : {type:Number,required:true,maxlength:15},
+    nombre: {type:String},
     usuario: {type: mongoose.Schema.Types.ObjectId, ref: 'usuario'},
     foto:{type:String},
     categoria:{type: mongoose.Schema.Types.ObjectId, ref: 'categoria'},

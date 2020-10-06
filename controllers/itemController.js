@@ -86,6 +86,7 @@ function deleteItem(req, res) {
 function registerItem(req, res) {
     const item = new Item({
         precio: req.body.precio,
+        nombre: req.body.precio,
         usuario: req.user.id,
         foto: req.body.foto,
         categoria: req.body.categoria,
