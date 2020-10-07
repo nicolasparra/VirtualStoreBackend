@@ -16,7 +16,7 @@ function getItem(req, res) {
     Item.find({}).exec((err, items) => {
         if (err) return res.status(500).send({ data: `Error al conectar al servidor: ${err}` })
         if (!items) return res.status(404).send({ data: 'No hay Items registrados' })
-        return res.status(200).send({ data: items })
+        return res.status(200).send(items)
     })
 }//end getItem
 
